@@ -1,0 +1,50 @@
+{
+  "name": "@toters/toterslokalise-sdk",
+  "version": "1.0.0",
+  "description": "TotersLokalise JavaScript SDK for OTA localization.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint src test --max-warnings=0",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toters-eng/toterslokalise-js.git"
+  },
+  "homepage": "https://github.com/toters-eng/toterslokalise-js#readme",
+  "keywords": [
+    "localization",
+    "i18n",
+    "translations",
+    "ota",
+    "toterslokalise"
+  ],
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^5.1.0"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/toters-eng/toterslokalise-js/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
