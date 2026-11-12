@@ -21,7 +21,7 @@ TotersLokalise lets applications fetch versioned translations over the air (OTA)
 ## Installation
 
 ```bash
-npm install @toters/toterslokalise-sdk
+npm install @totersapp/toterslokalise-sdk
 ```
 
 ### Releasing
@@ -37,7 +37,7 @@ git push origin main 1.0.1
 ## Quick Start
 
 ```ts
-import { createClient, MemoryCacheAdapter } from '@toters/toterslokalise-sdk';
+import { createClient, MemoryCacheAdapter } from '@totersapp/toterslokalise-sdk';
 
 const client = createClient({
   baseUrl: 'https://arcade.stage.toters-api.com/toters-lokalise/api',

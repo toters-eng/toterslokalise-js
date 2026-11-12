@@ -1,7 +1,7 @@
 {
-  "name": "@toters/toterslokalise-sdk",
+  "name": "@totersapp/toterslokalise-sdk",
   "version": "1.0.0",
-  "description": "TotersLokalise JavaScript SDK for OTA localization.",
+  "description": "TotersLokalise JavaScript SDK: over-the-air translations for Toters web apps, with offline cache and safe fallbacks.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -32,7 +32,8 @@
     "i18n",
     "translations",
     "ota",
-    "toterslokalise"
+    "toterslokalise",
+    "toters"
   ],
   "devDependencies": {
     "@types/node": "^24.0.0",
