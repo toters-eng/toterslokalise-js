@@ -25,6 +25,19 @@ import {
 } from '../src/index.js';
 
 describe('canonical interpolation', () => {
+  it('formats typed number and decimal placeholders with the locale', () => {
+    expect(formatCanonicalMessage('You have {0:number} items', [1234], 'en-US')).toBe(
+      'You have 1,234 items',
+    );
+    expect(formatCanonicalMessage('You have {0:number} items', ['1234'], 'en-US')).toBe(
+      'You have 1,234 items',
+    );
+    expect(formatCanonicalMessage('Total {0:decimal:2}', [5], 'en-US')).toBe('Total 5.00');
+    expect(formatCanonicalMessage('{1:number} of {0}', ['x', 7], 'en-US')).toBe('7 of x');
+    expect(formatCanonicalMessage('{0:number}', ['abc'], 'en-US')).toBe('abc');
+    expect(formatCanonicalMessage('{0:number} {2}', [1, 2])).toBe('{0:number} {2}');
+  });
+
   it('formats positional values, escaped braces, Unicode, and fails safely', () => {
     expect(formatCanonicalMessage('{0} → {1}', ['مرحبا', 'World'])).toBe(
       'مرحبا → World',
