@@ -69,6 +69,21 @@ The SDK verifies project and environment scope, protocol version, artifact origi
 
 If an update fails, the existing last-known-good translations remain available. Translation lookup itself does not perform network requests.
 
+## Build-only namespaces
+
+Namespaces marked **Build only** in TotersLokalise are left out of OTA releases.
+Download them in your CI/CD pipeline (one `<namespace>.json` per namespace, from
+`GET /api/v1/projects/{projectId}/translations?environment=production&namespace=<name>&format=json`;
+ready-made Bitbucket and GitHub Actions steps are on the Developer Hub) and bundle them
+with the app. Lookups fall back to these bundled strings.
+
+```ts
+import { TotersLokaliseClient, bundledFromExports } from '@totersapp/toterslokalise-sdk';
+import checkout from './TotersLokalise/checkout.json';
+
+const client = new TotersLokaliseClient({ /* … */ bundled: bundledFromExports({ checkout }) });
+```
+
 ## Requirements
 
 - Modern browsers with Fetch API support

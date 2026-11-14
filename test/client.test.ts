@@ -572,3 +572,18 @@ describe('JavaScript reference SDK and OTA protocol v1', () => {
     );
   });
 });
+
+describe('bundledFromExports', () => {
+  it('reads multi-language and single-language export files by namespace', async () => {
+    const { bundledFromExports } = await import('../src/index.js');
+    const bundled = bundledFromExports({
+      checkout: { data: { 'en-US': { pay_now: 'Pay now' }, ar: { pay_now: 'ادفع الآن' } } },
+      legal: { terms: 'Terms' },
+    });
+    expect(bundled.get('ar', 'checkout', 'pay_now')).toBe('ادفع الآن');
+    expect(bundled.get('en-US', 'checkout', 'pay_now')).toBe('Pay now');
+    expect(bundled.get('en-US', 'legal', 'terms')).toBe('Terms');
+    expect(bundled.get('en-US', 'checkout', 'missing')).toBeUndefined();
+    expect(bundled.get('en-US', 'unknown', 'pay_now')).toBeUndefined();
+  });
+});
