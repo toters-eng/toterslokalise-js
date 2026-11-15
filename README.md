@@ -1,8 +1,10 @@
-# TotersLokalise JavaScript SDK
+# Lingo Rider JavaScript SDK
 
-Official JavaScript/TypeScript SDK for TotersLokalise.
+Official JavaScript/TypeScript SDK for Lingo Rider.
 
-TotersLokalise lets applications fetch versioned translations over the air (OTA), switch locales at runtime, and continue working from cached or bundled translations when the network is unavailable.
+> Lingo Rider keeps its technical name `toterslokalise` in packages, modules, classes and settings.
+
+Lingo Rider lets applications fetch versioned translations over the air (OTA), switch locales at runtime, and continue working from cached or bundled translations when the network is unavailable.
 
 ## Features
 
@@ -30,8 +32,8 @@ Bump the version without npm's `v` tag prefix, then push the tag; the Release
 workflow tests and publishes it to npmjs.com:
 
 ```bash
-npm version 1.0.1 --tag-version-prefix=""
-git push origin main 1.0.1
+npm version 1.2.2 --tag-version-prefix=""
+git push origin main 1.2.2
 ```
 
 ## Quick Start
@@ -63,7 +65,7 @@ const title = client.t('welcome', { namespace: 'common', fallback: 'Welcome' });
 
 ## OTA and Offline Behavior
 
-TotersLokalise validates OTA manifests and translation artifacts before replacing cached translations.
+Lingo Rider validates OTA manifests and translation artifacts before replacing cached translations.
 
 The SDK verifies project and environment scope, protocol version, artifact origin, artifact size, and SHA-256 checksum.
 
@@ -71,7 +73,7 @@ If an update fails, the existing last-known-good translations remain available. 
 
 ## Build-only namespaces
 
-Namespaces marked **Build only** in TotersLokalise are left out of OTA releases.
+Namespaces marked **Build only** in Lingo Rider are left out of OTA releases.
 Download them in your CI/CD pipeline (one `<namespace>.json` per namespace, from
 `GET /api/v1/projects/{projectId}/translations?environment=production&namespace=<name>&format=json`;
 ready-made Bitbucket and GitHub Actions steps are on the Developer Hub) and bundle them
@@ -92,7 +94,7 @@ const client = new TotersLokaliseClient({ /* … */ bundled: bundledFromExports(
 
 ## Security
 
-Use a TotersLokalise public SDK credential beginning with `gl_sdk_`.
+Use a Lingo Rider public SDK credential beginning with `gl_sdk_`.
 
 Public SDK credentials are designed for client applications. Never embed administrative or private server credentials in browser or mobile applications.
 
@@ -102,4 +104,4 @@ Visit https://arcade.stage.toters-api.com/toters-lokalise/ for more information.
 
 ## Status
 
-This SDK implements TotersLokalise OTA protocol v1.
+This SDK implements Lingo Rider OTA protocol v1.

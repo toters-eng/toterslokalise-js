@@ -1,7 +1,7 @@
 {
   "name": "@totersapp/toterslokalise-sdk",
-  "version": "1.2.0",
-  "description": "TotersLokalise JavaScript SDK: over-the-air translations for Toters web apps, with offline cache and safe fallbacks.",
+  "version": "1.2.1",
+  "description": "Lingo Rider JavaScript SDK: over-the-air translations for Toters web apps, with offline cache and safe fallbacks.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
